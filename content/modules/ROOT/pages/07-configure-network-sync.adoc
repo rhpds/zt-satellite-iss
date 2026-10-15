@@ -1,0 +1,98 @@
+:imagesdir: ../assets/images
+
+== Configure the downstream satellite server to use the upstream satellite server as a CDN
+
+Now we'll configure the downstream satellite server `satellite-2.lab` to use the upstream satellite server, `satellite.lab` as a content delivery network (CDN).
+
+=====
+.Configure the downstream satellite server to use the upstream satellite server as a CDN
+[%collapsible]
+====
+
+In the `+Satellite Server 2 Web UI+`, log in with the following
+credentials.
+
+Username
+
+[source,js]
+----
+admin
+----
+
+Password
+
+[source,js]
+----
+bc31c9a6-9ff0-11ec-9587-00155d1b0702
+----
+
+IMPORTANT: Make sure that the organization is set to `+Acme Org+` and
+the location is set to `+Kicking Horse+`.
+
+.Location
+image::organdloacation.gif[Location]
+
+Navigate to `+Subscriptions+`.
+
+.Subscriptions
+image::subscriptions.png[Subscriptions]
+
+Click `+Manage Manifest+`.
+
+.Manage manifests
+image::managemanifest.png[Manage manifests]
+
+Click the tab `+CDN Configuration+`.
+
+.CDN Configuration
+image::cdnconfig.png[CDN Configuration]
+
+Click `+Network Sync+`.
+
+.Network Sync
+image::networksync.png[Network Sync]
+
+Perform the following tasks.
+
+[arabic, start=1]
+. Enter the url for satellite.lab.
+
+[source,js]
+----
+https://satellite.lab
+----
+
+[arabic, start=2]
+. Enter the username `+admin+`.
+
+[source,js]
+----
+admin
+----
+
+[arabic, start=3]
+. Enter the following password.
+
+[source,js]
+----
+bc31c9a6-9ff0-11ec-9587-00155d1b0702
+----
+
+[arabic, start=4]
+. Enter the `Organization label` `+Acme_Org+`
+
+[source,js]
+----
+Acme_Org
+----
+
+[arabic, start=5]
+. Choose the SSL CA Content Credential `+satellite.lab+`.
+. Click `+Update+`.
+. Click `+Close+`.
+
+.Network sync configuration
+image::networksyncconfig.png[Network sync configuration]
+
+====
+=====

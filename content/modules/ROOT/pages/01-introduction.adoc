@@ -1,0 +1,71 @@
+:imagesdir: ../assets/images
+
+== Inter-Satellite Sync
+
+Inter-Satellite Sync (ISS) allows you to synchronize content between
+Red Hat Satellite Servers. ISS is useful in environments where network
+separation is required to segregate infrastructure from direct
+connections to the internet, such as air-gapped or DMZ topologies.
+
+In this lab, we'll walk through both ISS methods:
+
+[arabic]
+. *Export sync* - Export content from an upstream Satellite Server and
+import it into a downstream Satellite Server.
+. *Network sync* - Configure a downstream Satellite Server to
+synchronize content directly from the upstream Satellite Server instead
+of the Red Hat content delivery network (CDN).
+
+Here's a summary of what we'll cover in the upcoming modules:
+
+[arabic]
+. *Create a content view* - Create a content view containing the custom repository on `+satellite.lab+`.
+. *Create an ISS export* - Export the content view from `+satellite.lab+`.
+. *Copy the export* - Copy the exported data to `+satellite-2.lab+`.
+. *Import the export* - Import the exported data into `+satellite-2.lab+`.
+. *Import the SSL certificate* - Import the `+satellite.lab+` SSL certificate into `+satellite-2.lab+`.
+. *Configure network sync* - Configure `+satellite-2.lab+` to use `+satellite.lab+` as a CDN.
+. *Verify network sync* - Verify that `+satellite-2.lab+` can synchronize software from `+satellite.lab+`.
+
+== Lab Environment
+
+The lab environment consists of the following
+
+[arabic]
+. Two Red Hat Satellite Servers, `+satellite.lab+` and `+satellite-2.lab+` (Satellite is preinstalled)
+. One Red Hat Enterprise Linux 10 host
+
+== Log into the Web UI
+
+First, we'll log into the Red Hat Satellite Web User Interface (UI).
+Satellite has been preinstalled and installation is out of scope for
+this lab.
+
+Click on the tab labelled Satellite Web UI as shown in the image below.
+
+.Satellite Web UI tab
+image::satellite-tab.png[sat tab]
+
+You'll need the following credentials to log into the Satellite Web UI.
+
+You can copy and paste each of them below.
+
+[source,js]
+----
+admin
+----
+
+[source,js]
+----
+bc31c9a6-9ff0-11ec-9587-00155d1b0702
+----
+
+Now click `+Log In+`.
+
+.Login menu
+image::webuilogin.png[login]
+
+You will be taken to the main dashboard.
+
+.Overview menu
+image::main-menu.png[main menu]

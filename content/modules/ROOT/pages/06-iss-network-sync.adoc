@@ -1,0 +1,58 @@
+:imagesdir: ../assets/images
+
+== Inter-Satellite Sync network sync
+
+Inter-Satellite Sync (ISS) network sync enables a downstream satellite
+server to synchronize data from an upstream satellite server instead of
+the Red Hat content delivery network (CDN). The benefit of this feature
+is simplifying environments where network separation is required to
+segregate infrastructure from direct connections to the internet. ISS
+network sync is useful where DMZ topologies are required.
+
+ISS network sync configuration consists of the following.
+
+. An upstream
+satellite server (`+satellite.lab+`) synchronizing software from the Red
+Hat CDN.
+. A downstream satellite server (`+satellite-2.lab+`) configured to
+synchronize software from `+satellite.lab+`.
+
+The downstream satellite server must contain a manifest with valid Red
+Hat subscriptions.
+
+== Import the ssl certificate from satellite.lab
+
+In order to secure the synchronization process between upstream and
+downstream satellite servers, we need to import the upstream
+(`+satellite.lab+`) SSL certificate into the downstream satellite server
+(`+satellite-2.lab+`).
+
+=====
+.Import the ssl certification from satellite.lab
+[%collapsible]
+====
+
+Enter the following command in `satellite-2.lab terminal`.
+
+[source,bash,run]
+----
+wget -P ~ http://satellite.lab/pub/katello-server-ca.crt
+----
+
+This command will download the `+katello-server-ca.crt+` from
+`+satellite.lab+` to `+satellite-2.lab+`.
+
+Next, in the `satellite-2.lab terminal`,
+use the following command to import the certificate.
+
+[source,bash,run]
+----
+hammer content-credential create \
+--content-type cert \
+--name "satellite.lab" \
+--organization "Acme Org" \
+--path ~/katello-server-ca.crt
+----
+
+====
+=====

@@ -1,0 +1,65 @@
+:imagesdir: ../assets/images
+
+== Import the exported data into satellite-2.lab
+
+Now we'll import the data into `satellite-2.lab`.
+
+=====
+.Import the exported data into satellite-2.lab
+[%collapsible]
+====
+
+We need to change the ownership of the data we just exported to the `+pulp+` account and group. In `satellite-2.lab terminal` run the following command.
+
+[source,bash,run]
+----
+chown -R pulp:pulp /var/lib/pulp/imports/Acme_Org/
+----
+
+In `satellite-2.lab terminal`, run the following command to import the exported data.
+
+[source,bash,run]
+----
+hammer content-import version --organization "Acme Org" --path "/var/lib/pulp/imports/Acme_Org"
+----
+
+You can verify the result in the web gui with the same credentials as `+satellite.lab+`. Click on the `+Satellite 2 Web UI+`.
+
+Username
+
+[source,js]
+----
+admin
+----
+
+Password
+
+[source,js]
+----
+bc31c9a6-9ff0-11ec-9587-00155d1b0702
+----
+
+IMPORTANT: Ensure that you are in `+Acme Org+` organization and
+the `+Kicking Horse+` location.
+
+.Exported content view in satellite-2.lab
+image::exportedissexport.png[exportedissexport]
+
+Click on `+ISS Export+`.
+
+.ISS Export content view
+image::issexportcv.png[issexportcv]
+
+In the `+ISS Export+` menu, click on `+Repositories+`.
+
+.ISS Export menu
+image::issexportrepos.png[issexportrepos]
+
+In this menu you can see that we have successfully imported the
+repository `+My custom repository+`.
+
+.My custom repository
+image::exportedcustomrepo.png[exportedcustomrepo]
+
+====
+=====

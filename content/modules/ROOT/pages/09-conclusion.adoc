@@ -1,0 +1,18 @@
+You've reached the conclusion of this lab.
+
+For more information on Red Hat Satellite, please visit the
+https://www.redhat.com/en/technologies/management/satellite[Red Hat Satellite landing page].
+
+Here are some handy links to other tasks you can perform with Red Hat
+Satellite.
+
+* https://www.redhat.com/en/blog/satellite-host-configuration-rhel-system-roles-powered-ansible[Learn how to apply RHEL System Roles with Red Hat Satellite].
+
+For information on the Red Hat Satellite Lifecycle, please follow this
+link.
+
+* https://access.redhat.com/support/policy/updates/satellite[Red Hat Satellite Product Life Cycle]
+
+Please leave feedback here.
+
+* https://github.com/rhpds/zt-satellite-iss/issues[Feedback]

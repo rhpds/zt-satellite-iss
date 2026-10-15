@@ -1,0 +1,66 @@
+:imagesdir: ../assets/images
+
+== Create a new content view
+
+Inter-Satellite Sync (ISS) export sync exports software at the
+repository, content view, and lifecycle environment levels. In this
+assignment, we'll export the custom repo '`My custom repository`' at the
+content view level from `+satellite.lab+` and import it into
+`+satellite-2.lab+`.
+
+In order to save time, we'll create a new content view with a minimal
+amount of software.
+
+=====
+.Create a new content view
+[%collapsible]
+====
+
+Run the following script in `satellite.lab terminal`.
+
+[source,bash,run]
+----
+tee ~/createandpublishissexport.yml << EOF
+---
+- name: Create a new CV "ISS Export".
+  hosts: localhost
+  remote_user: root
+
+  tasks:
+  - name: "Create ISS Export content view"
+    redhat.satellite.content_view:
+      username: "admin"
+      password: "bc31c9a6-9ff0-11ec-9587-00155d1b0702"
+      server_url: "https://satellite.lab"
+      name: "ISS Export"
+      organization: "Acme Org"
+      repositories:
+        - name: 'My custom repository'
+          product: 'My custom product'
+
+  - name: "Publish and promote ISS Export to Library lifecycle environment"
+    redhat.satellite.content_view_version:
+      username: "admin"
+      password: "bc31c9a6-9ff0-11ec-9587-00155d1b0702"
+      server_url: "https://satellite.lab"
+      organization: "Acme Org"
+      content_view: "ISS Export"
+      lifecycle_environments:
+        - "Library"
+EOF
+----
+
+This playbook creates a new content view called `+ISS Export+`
+containing the repository `+My custom repository+`. Then the playbook
+publishes and promotes the content view `+ISS Export+` to the
+`+Library+` lifecycle environment.
+
+Execute the playbook in `satellite.lab terminal`
+
+[source,bash,run]
+----
+ansible-playbook createandpublishissexport.yml
+----
+
+====
+=====

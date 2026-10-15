@@ -1,0 +1,17 @@
+lab:
+  name: "Red Hat Satellite Inter-Satellite Sync"
+  shortname: "zt-satellite-iss"
+  maintainer: "Matthew Yee (myee@redhat.com)"
+
+  description:
+    summary: "Learn how to synchronize content between Satellite Servers with Inter-Satellite Sync."
+    goal: "Export and import content between Satellite Servers, and configure network sync from a downstream Satellite Server to an upstream Satellite Server."
+    concepts:
+     - "Satellite"
+     - "Inter-Satellite Sync"
+    use_case: "Synchronize content between disconnected, air-gapped, or DMZ separated Satellite Servers"
+    time_to_complete: "30"
+
+  git_ref:
+    production: "main"
+    development: "main"

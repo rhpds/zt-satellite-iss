@@ -1,0 +1,8 @@
+name: modules
+version: master
+
+asciidoc:
+  attributes:
+    lab_name: "Satellite Inter-Satellite Sync 6.18"
+    release-version: master
+    page-pagination: true

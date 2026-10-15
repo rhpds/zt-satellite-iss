@@ -1,0 +1,57 @@
+:imagesdir: ../assets/images
+
+== Verify that satellite-2.lab can synchronize software from satellite.lab
+
+Let's check that it works.
+
+=====
+.Verify that satellite-2.lab can synchronize software from satellite.lab
+[%collapsible]
+====
+
+Navigate to the `+Red Hat Repositories+` menu.
+
+.Red Hat Repositories
+image::redhatrepositories.png[Red Hat Repositories]
+
+Click on the `+Recommended Repositories+` slider to change it to `+ON+`.
+
+.Recommended Repositories
+image::recommendedrepos.png[Recommended Repositories]
+
+Select the `+Red Hat Enterprise Linux 10 for x86_64 - BaseOS RPMs 10+`
+repository.
+
+.RHEL BaseOS repo
+image::rhel10baseos.gif[RHEL BaseOS repo]
+
+It is possible to select this repository because it has been provided by
+the upstream satellite server `+satellite.lab+`.
+
+If we select another repository that hasn't been synchronized to the
+upstream satellite server, a message would display
+`+No repositories available+`.
+
+.No repositories available
+image::norepoavailable.gif[No repositories available]
+
+Navigate to the Products menu.
+
+.Products menu
+image::products.png[Products menu]
+
+Sync all the products.
+
+.Sync products
+image::syncproducts.gif[Sync products]
+
+NOTE: You can skip to the next assignment without waiting for the
+synchronization to complete.
+
+====
+=====
+
+== Optional self-directed exercise for the reader
+
+Deregister rhel1.lab from satellite.lab and register it to
+satellite-2.lab and install software.
