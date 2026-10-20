@@ -4,10 +4,10 @@
 
 Now we'll configure the downstream satellite server `satellite-2.lab` to use the upstream satellite server, `satellite.lab` as a content delivery network (CDN).
 
-=====
+======
 .Configure the downstream satellite server to use the upstream satellite server as a CDN
 [%collapsible]
-====
+=====
 
 In the `+Satellite Server 2 Web UI+`, log in with the following
 credentials.
@@ -36,6 +36,15 @@ Navigate to `+Subscriptions+`.
 
 .Subscriptions
 image::subscriptions.png[Subscriptions]
+
+[NOTE]
+====
+You may see a text box pop up declaring that the manifest has expired.
+It's safe to ignore this message and dismiss the text box to continue.
+
+.Manifest expired
+image::error-manifest.png[Manifest expired]
+====
 
 Click `+Manage Manifest+`.
 
@@ -94,5 +103,5 @@ Acme_Org
 .Network sync configuration
 image::networksyncconfig.png[Network sync configuration]
 
-====
 =====
+======
