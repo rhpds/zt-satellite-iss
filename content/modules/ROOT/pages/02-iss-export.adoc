@@ -1,12 +1,14 @@
 :imagesdir: ../assets/images
 
-== Create a new content view
+== Inter-Satellite Sync export sync
 
 Inter-Satellite Sync (ISS) export sync exports software at the
 repository, content view, and lifecycle environment levels. In this
 assignment, we'll export the custom repo '`My custom repository`' at the
 content view level from `+satellite.lab+` and import it into
 `+satellite-2.lab+`.
+
+== Create a new content view
 
 In order to save time, we'll create a new content view with a minimal
 amount of software.
@@ -60,6 +62,25 @@ Execute the playbook in `satellite.lab terminal`
 [source,bash,run]
 ----
 ansible-playbook createandpublishissexport.yml
+----
+
+====
+=====
+
+== Create an Inter-Satellite Sync export
+
+Now we'll export the content view `+ISS Export+` as an ISS export.
+
+=====
+.Create an ISS sync export
+[%collapsible]
+====
+
+Run the command below in `satellite.lab terminal`.
+
+[source,bash,run]
+----
+hammer content-export complete version --content-view "ISS Export" --version "1.0" --organization "Acme Org"
 ----
 
 ====

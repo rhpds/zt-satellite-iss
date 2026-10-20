@@ -6,28 +6,22 @@ antora:
     - name: "01-introduction"
       label: "Introduction"
       solveButton: true
-    - name: "02-create-content-view"
-      label: "Create Content View"
-      solveButton: true
-    - name: "03-iss-export"
+    - name: "02-iss-export"
       label: "ISS Export"
       solveButton: true
-    - name: "04-copy-export"
-      label: "Copy Export"
-      solveButton: true
-    - name: "05-iss-import"
+    - name: "03-iss-import"
       label: "ISS Import"
       solveButton: true
-    - name: "06-iss-network-sync"
+    - name: "04-iss-network-sync"
       label: "ISS Network Sync"
       solveButton: true
-    - name: "07-configure-network-sync"
+    - name: "05-configure-network-sync"
       label: "Configure Network Sync"
       solveButton: true
-    - name: "08-verify-network-sync"
+    - name: "06-verify-network-sync"
       label: "Verify Network Sync"
       solveButton: true
-    - name: "09-conclusion"
+    - name: "07-conclusion"
       label: "Conclusion"
       solveButton: false
 

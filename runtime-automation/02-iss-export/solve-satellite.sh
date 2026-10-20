@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "Solving 02-create-content-view" >> /tmp/progress.log
+echo "Solving 02-iss-export" >> /tmp/progress.log
 
 # Create a new CV "ISS Export" containing "My custom repository" and
 # publish and promote it to the Library lifecycle environment.
@@ -34,4 +34,7 @@ EOF
 
 ansible-playbook createandpublishissexport.yml
 
-echo "Solved 02-create-content-view" >> /tmp/progress.log
+# Export the "ISS Export" content view as an ISS export.
+hammer content-export complete version --content-view "ISS Export" --version "1.0" --organization "Acme Org"
+
+echo "Solved 02-iss-export" >> /tmp/progress.log

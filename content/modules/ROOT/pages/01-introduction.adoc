@@ -19,10 +19,8 @@ of the Red Hat content delivery network (CDN).
 Here's a summary of what we'll cover in the upcoming modules:
 
 [arabic]
-. *Create a content view* - Create a content view containing the custom repository on `+satellite.lab+`.
-. *Create an ISS export* - Export the content view from `+satellite.lab+`.
-. *Copy the export* - Copy the exported data to `+satellite-2.lab+`.
-. *Import the export* - Import the exported data into `+satellite-2.lab+`.
+. *Create an ISS export* - Create a content view containing the custom repository on `+satellite.lab+` and export it.
+. *Import the ISS export* - Copy the exported data to `+satellite-2.lab+` and import it.
 . *Import the SSL certificate* - Import the `+satellite.lab+` SSL certificate into `+satellite-2.lab+`.
 . *Configure network sync* - Configure `+satellite-2.lab+` to use `+satellite.lab+` as a CDN.
 . *Verify network sync* - Verify that `+satellite-2.lab+` can synchronize software from `+satellite.lab+`.
