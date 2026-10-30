@@ -14,7 +14,10 @@ The sibling downstream images are `satellite-server-2-6-19-10-29-26-2` (50 GB) a
 inspected in detail, but both pairs share the same build lineage and naming shift.
 
 **Outcome:** the new `10-29-26-2` pair is a clean rebuild of the same lab
-configuration and is now referenced by `config/instances.yaml` (commit `78b24b1`).
+configuration. It was briefly adopted in `config/instances.yaml` (commit
+`78b24b1`) and then reverted (`e175372`) — the lab currently runs
+`satellite-server-rhdp` (floating tag) as upstream and
+`satellite-server-rhdp-2-6-19-10-16-26-50g-image` as downstream.
 Open follow-ups are listed at the end.
 
 ## Build metadata
@@ -151,6 +154,8 @@ designed.
 | `66461fc` | Modules 2+3 merged into `02-iss-export`, modules 4+5 merged into `03-iss-import` (lab is now 7 modules); fixed `runtime-automation/main.yml` host loop (added `satellite`, dropped nonexistent `rhel2`) |
 | `d31ce03` | Manifest-expired NOTE box with `error-manifest.png` added to `05-configure-network-sync` (image rendered inside the admonition, collapsible delimiters bumped) |
 | `78b24b1` | (user) `instances.yaml` switched to the new image pair `satellite-server-1-6-19-10-29-26-2` / `satellite-server-2-6-19-10-29-26-2` |
+| `88a2cca` | (user) this comparison document committed |
+| `e175372` | revert of `78b24b1` — `instances.yaml` back to `satellite-server-rhdp` (floating tag) / `satellite-server-rhdp-2-6-19-10-16-26-50g-image` |
 
 ### GCP (project `tmm-instruqt-11-26-2021`)
 
